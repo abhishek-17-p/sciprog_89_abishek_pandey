@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Iterative GCD using the Euclidean algorithm (pseudocode on the sheet) */
+/* Iterative GCD */
 int gcd_iterative(int a, int b)
 {
         int temp;
@@ -27,10 +27,10 @@ int gcd_recursive(int a, int b)
 int main(void)
 {
         int a, b;
-
+	// read the two numbers from the user
         printf("Please enter two integers\n");
         scanf("%d %d", &a, &b);
-
+	// both methods should give the same answer
         printf("gcd_it is %d\n", gcd_iterative(a, b));
         printf("gcd_rec is %d\n", gcd_recursive(a, b));
 

@@ -6,7 +6,7 @@ double arctanh2(double x);
 
 int main(void)
 {
-	double delta; 
+	double delta;  // precision for the series
 	printf("Print enter a real number with absoule value less than 1 \n" );
 	scanf ("%lf", &delta);
 
@@ -15,11 +15,12 @@ int main(void)
 	double end = 0.9; 
 	double step = 0.01; 
 
-	int length = 1+ (end-start)/step;
-	double arctanh1_arr[length]; 
-	double arctanh2_arr[length];
+	int length = 1+ (end-start)/step; // number of x values 
+	double arctanh1_arr[length]; // results from the series
+	double arctanh2_arr[length]; // results from the logarithm formula
 	int i;
 	
+	// calculate both methods for each x and print the difference
 	for (i = 0; i < length; i++)
 	{
 		arctanh1_arr[i] = arctanh1(start + i * step, delta);
@@ -31,6 +32,7 @@ int main(void)
 	return 0;
 }
 
+// Maclaurin series sums until a term is smaller than delta
 double arctanh1(double x, double delta)
 
 {
@@ -45,6 +47,8 @@ double arctanh1(double x, double delta)
 	} while (fabs(term)>delta); 
 	return sum;
 }
+
+// logarithm form: 0.5 * [ln(1 + x) - ln(1 - x)]
 
 double arctanh2(double x)
 

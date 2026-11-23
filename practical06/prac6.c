@@ -9,6 +9,7 @@ int main(void)
 	double C[n][q];
 
 	int i,j; 
+	// Filling A = i + j
 	for (i = 0; i<n; i++)
 	{
 		for (j = 0; j<p; j++)
@@ -16,6 +17,7 @@ int main(void)
 			A[i][j]= i + j;
 		}
 	}
+	// Filling B = i - j
 	for (i = 0; i<p; i++)
 	{
 		for (j = 0; j<q; j++)
@@ -23,7 +25,7 @@ int main(void)
 			B[i][j]= i - j;
 		}
 	}
-
+	// Set C = 0 before multiplying
 	for (i = 0; i < n; i++)
 	{
 		for (j = 0; j < q; j++)
@@ -34,7 +36,7 @@ int main(void)
 
 	int k;
 
-
+	// Matrix multiplication
 	for (i = 0; i < n; i++)
 	{
 		for (j = 0; j < q; j++)
@@ -45,6 +47,7 @@ int main(void)
 			}
 		}
 	}
+	// Printing A, B and C
 	printf("This is A:\n");
 	for (i = 0; i < n; i++)
 	{

@@ -11,6 +11,7 @@ int main(void)
         double C[n][q];
 
         int i,j;
+	//Filling A with i+j
         for (i = 0; i<n; i++)
         {
                 for (j = 0; j<p; j++)
@@ -18,6 +19,7 @@ int main(void)
                         A[i][j]= i + j;
                 }
         }
+	//Filling A with i-j
         for (i = 0; i<p; i++)
         {
                 for (j = 0; j<q; j++)
@@ -25,7 +27,7 @@ int main(void)
                         B[i][j]= i - j;
                 }
         }
-
+	// Set C = 0 before multiplying
         for (i = 0; i < n; i++)
         {
                 for (j = 0; j < q; j++)
@@ -34,8 +36,9 @@ int main(void)
                 }
         }
 
-	matmult(n,p,q,A,B,C);
+	matmult(n,p,q,A,B,C); // C = A * B
 
+	//Printing A, B and C
         printf("This is A:\n");
         for (i = 0; i < n; i++)
         {

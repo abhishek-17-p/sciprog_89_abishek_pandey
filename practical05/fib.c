@@ -15,13 +15,14 @@ int main(void)
 		return -1;
 	}
 
-	int f0 = 0; 
-	int f1 = 1; 
+	int f0 = 0; // first term
+	int f1 = 1; // second term
 	int i; 
 
+	// each call moves the pair one step along the series
 	for (i = 2; i<=n; i++)
 	{
-		fib(&f1,&f0);
+		fib(&f1,&f0); // pass the addresses so fib can change f1 and f0
 		printf ("%d\n",f1);
 
 	}

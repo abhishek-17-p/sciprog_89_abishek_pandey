@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-
+// iterative GCD
 int gcd_iterative(int a, int b)
 {
         int temp;
@@ -15,7 +15,7 @@ int gcd_iterative(int a, int b)
         return a;
 }
 
-
+// recursive GCD
 int gcd_recursive(int a, int b)
 {
         if (b == 0)
@@ -30,8 +30,9 @@ int main(void)
 	int rand_upper=100;
 	int rand_lower=1;
 
-        srand(time(NULL));
+        srand(time(NULL)); // seed with the current time so the numbers change each run
 
+	// random integers in the range set by rand_upper and rand_lower
         int a = rand() % (rand_upper-rand_lower);
         int b = rand() % (rand_upper-rand_lower);
 
@@ -39,6 +40,7 @@ int main(void)
         printf("gcd_it is %d\n", gcd_iterative(a, b));
         printf("gcd_rec is %d\n", gcd_recursive(a, b));
 
+	// write the same results to gcd.txt
 	FILE* fp;
 	fp = fopen("gcd.txt","w");
 	fprintf(fp,"a = %d, b = %d\n", a, b);

@@ -5,19 +5,20 @@ void fillwithones(int *a, int n);
 void printarray(int *a, int n);
 void freearray(int *a);
 
+// allocates memory for n integers and returns a pointer to it
 
 int *allocatearray(int n)
 {
     int *a = (int *)malloc(n * sizeof(int));
     /* int *a = (int *)calloc(n, sizeof(int));   same, but sets every value to 0 */
-    if (a == NULL)
+    if (a == NULL) // stop if memory could not be allocated
     {
         printf("Didn't work!\n");
         exit(1);
     }
     return a;
 }
-
+// sets every element to 1 (needs n, as a pointer does not know the array length)
 void fillwithones(int *a, int n)
 {
     int i;
@@ -26,6 +27,7 @@ void fillwithones(int *a, int n)
         a[i] = 1;
     }
 }
+// prints every element of the array
 void printarray(int *a, int n)
 {
     int i;
@@ -34,6 +36,7 @@ void printarray(int *a, int n)
         printf("a[%d] = %d\n", i, a[i]);
     }
 }
+// gives the memory back
 void freearray(int *a)
 {
     free(a);
